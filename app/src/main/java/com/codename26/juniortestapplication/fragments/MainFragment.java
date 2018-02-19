@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 
 import com.codename26.juniortestapplication.R;
 import com.codename26.juniortestapplication.adapters.PagerAdapter;
+import com.codename26.juniortestapplication.viewPagers.LockableViewPager;
 
 
 public class MainFragment extends Fragment {
@@ -31,7 +32,7 @@ public class MainFragment extends Fragment {
         tabLayout.addTab(tabLayout.newTab().setText("DVIR"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
-        final ViewPager viewPager = v.findViewById(R.id.pager);
+        final LockableViewPager viewPager = v.findViewById(R.id.pager);
         PagerAdapter adapter = new PagerAdapter(getChildFragmentManager(), tabLayout.getTabCount());
         viewPager.setAdapter(adapter);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
