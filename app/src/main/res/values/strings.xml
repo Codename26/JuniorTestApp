@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Junior Test Application</string>
+    <string name="first_page_warning">This is the first page!</string>
+    <string name="last_page_warning">This is the last page!</string>
+    <string name="previous_log">previous log</string>
+    <string name="next_log">next log</string>
+    <string name="send">Send</string>
+    <string name="add">Add</string>
+    <string name="load">Load</string>
 </resources>
