@@ -8,29 +8,32 @@ import com.codename26.juniortestapplication.fragments.containerFragments.DVIRFra
 import com.codename26.juniortestapplication.fragments.containerFragments.DocsFragment;
 import com.codename26.juniortestapplication.fragments.containerFragments.GeneralFragment;
 import com.codename26.juniortestapplication.fragments.containerFragments.LogFragment;
+import com.codename26.juniortestapplication.model.LogData;
 
-public class PagerAdapter extends FragmentStatePagerAdapter {
-    int mNumOfTabs;
+public class FragmentContainerPagerAdapter extends FragmentStatePagerAdapter {
+    private final int mNumOfTabs;
+    private LogData mLogData;
 
-    public PagerAdapter(FragmentManager fm, int numOfTabs) {
+    public FragmentContainerPagerAdapter(FragmentManager fm, int numOfTabs, LogData logData) {
         super(fm);
         mNumOfTabs = numOfTabs;
+        mLogData = logData;
     }
 
     @Override
     public Fragment getItem(int position) {
         switch (position){
             case 0:
-                LogFragment logFragmentTab = new LogFragment();
+                LogFragment logFragmentTab = LogFragment.newInstance(mLogData);
                 return logFragmentTab;
             case 1:
-                GeneralFragment generalFragmentTab = new GeneralFragment();
+                GeneralFragment generalFragmentTab = GeneralFragment.newInstance(mLogData);
                 return generalFragmentTab;
             case 2:
-                DocsFragment docsFragmentTab = new DocsFragment();
+                DocsFragment docsFragmentTab = DocsFragment.newInstance(mLogData);
                 return docsFragmentTab;
             case 3:
-                DVIRFragment dvirFragmentTab = new DVIRFragment();
+                DVIRFragment dvirFragmentTab = DVIRFragment.newInstance(mLogData);
                 return dvirFragmentTab;
             default:
                 return null;
